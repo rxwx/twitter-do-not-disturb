@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "Twitter Do not Disturb",
+    "version": "2",
+    "description": "Prevents Twitter from adding the number of unread Tweets to the page tab",
+    "permissions": ["tabs", "https://twitter.com/*", "*://*.twitter.com/*"],
+    "content_scripts": [
+        {
+            "matches": ["https://twitter.com/*", "*://*.twitter.com/*"],
+            "js": ["dnd.js"]
+        }
+    ],
+    "icons" : {
+         "128": "icon.png" 
+    },
+    "web_accessible_resources": ["config.json" ]
+}
